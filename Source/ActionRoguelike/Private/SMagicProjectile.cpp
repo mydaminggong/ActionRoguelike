@@ -18,7 +18,7 @@ ASMagicProjectile::ASMagicProjectile()
 
 	EffectComp = CreateDefaultSubobject<UParticleSystemComponent>("EffectComp");
 	EffectComp->SetupAttachment(SphereComp);
-
+	 
 	MovementComp = CreateDefaultSubobject<UProjectileMovementComponent>("MovemenComp");
 	MovementComp->InitialSpeed = 1000.0f;
 	MovementComp->bRotationFollowsVelocity = true;

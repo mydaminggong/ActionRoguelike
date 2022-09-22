@@ -25,7 +25,7 @@ public:
 
 protected:
 
-	// 添加球形组件
+	// 添加球形碰撞组件
 	UPROPERTY(VisibleAnywhere)
 	USphereComponent* SphereComp;
 
