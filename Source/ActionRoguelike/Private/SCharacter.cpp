@@ -52,6 +52,7 @@ void ASCharacter::MoveForward(float Move)
 	AddMovementInput(ControlRot.Vector(), Move);
 }
 
+
 void ASCharacter::MoveRight(float Value)
 {
 	FRotator ControlRot = GetControlRotation();
@@ -85,6 +86,17 @@ void ASCharacter::PrimaryInteract()
 		InteractionComp->PrimaryInteract();
 	}
 }
+
+void ASCharacter::JumpStart()
+{
+	bPressedJump = true;
+}
+
+void ASCharacter::JumpEnd()
+{
+	bPressedJump = false;
+}
+
 
 // Called every frame
 void ASCharacter::Tick(float DeltaTime)
@@ -125,5 +137,9 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	PlayerInputComponent->BindAction("PrimaryAttack", IE_Pressed, this, &ASCharacter::PrimaryAttack);
 	PlayerInputComponent->BindAction("PrimaryInteract", IE_Pressed, this, &ASCharacter::PrimaryInteract);
+
+	// °ó¶¨ÌøÔ¾°´¼ü×´Ì¬Ö´ÐÐµÄº¯Êý
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ASCharacter::JumpStart);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ASCharacter::JumpEnd);
 }
 

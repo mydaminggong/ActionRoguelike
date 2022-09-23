@@ -12,7 +12,7 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 	//创建静态网格体对象
 	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>("MeshComp");
 	// 设置物理碰撞模拟为真
-	MeshComp->SetSimulatePhysics(true);
+	MeshComp->SetSimulatePhysics(false);
 	// 将其设置在根组件上
 	RootComponent = MeshComp;
 
@@ -25,8 +25,8 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 
 	ForceComp->SetAutoActivate(false);
 
-	ForceComp->Radius = 300.0f;
-	ForceComp->ImpulseStrength = 2500.0f;
+	ForceComp->Radius = 200.0f;
+	ForceComp->ImpulseStrength = 500.0f;
 	ForceComp->bImpulseVelChange = true;
 
 	ForceComp->AddCollisionChannelToAffect(ECC_WorldDynamic);

@@ -42,6 +42,8 @@ protected:
 	void MoveRight(float Value);
 	void PrimaryAttack();
 	void PrimaryInteract();
+	void JumpStart();
+	void JumpEnd();
 
 
 public:	
