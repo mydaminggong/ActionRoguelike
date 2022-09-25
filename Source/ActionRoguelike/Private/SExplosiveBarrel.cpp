@@ -12,7 +12,7 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 	//创建静态网格体对象
 	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>("MeshComp");
 	// 设置物理碰撞模拟为真
-	MeshComp->SetSimulatePhysics(false);
+	MeshComp->SetSimulatePhysics(true);
 	// 将其设置在根组件上
 	RootComponent = MeshComp;
 
