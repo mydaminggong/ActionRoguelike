@@ -4,6 +4,7 @@
 #include "SInteractionComponent.h"
 #include "Components/ActorComponent.h"
 #include "SGameplayInterface.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values for this component's properties
 USInteractionComponent::USInteractionComponent()
@@ -61,5 +62,7 @@ void USInteractionComponent::PrimaryInteract()
 			ISGameplayInterface::Execute_Interact(HitActor, MyPawn);
 		}
 	}
+
+	DrawDebugLine(GetWorld(), EyesLocation, End, FColor::Red, false, 2.0f, 0, 2.0f);
 }
 
