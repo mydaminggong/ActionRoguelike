@@ -54,14 +54,14 @@ void USInteractionComponent::PrimaryInteract()
 
 	TArray<FHitResult> Hits;
 
-	float Radius = 300.0f;
+	float Radius = 30.0f;
 
 	FCollisionShape Shape;
 	Shape.SetSphere(Radius);
 
 	bool bBlockingHit = GetWorld()->SweepMultiByObjectType(Hits, EyesLocation, End, FQuat::Identity, ObjectQueryParams, Shape);
 
-	FColor LineColor = bBlockingHit ? FColor::Red : FColor::Green;
+	//FColor LineColor = bBlockingHit ? FColor::Red : FColor::Green;
 
 	for (FHitResult Hit : Hits)
 	{
@@ -73,17 +73,17 @@ void USInteractionComponent::PrimaryInteract()
 				APawn* MyPawn = Cast<APawn>(MyOwner);
 
 				ISGameplayInterface::Execute_Interact(HitActor, MyPawn);
-				break;
+				//break;
 			}
 		}
 
-		DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 32, LineColor, false, 2.0f);
+		//DrawDebugSphere(GetWorld(), Hit.ImpactPoint, Radius, 32, LineColor, false, 2.0f);
 
 	}
 
 	
 
 	
-	DrawDebugLine(GetWorld(), EyesLocation, End, LineColor, false, 2.0f, 0, 2.0f);
+	//DrawDebugLine(GetWorld(), EyesLocation, End, LineColor, false, 2.0f, 0, 2.0f);
 }
 
