@@ -22,11 +22,11 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 	ForceComp->SetupAttachment(MeshComp);
 
 	//RootComponent = ForceComp;
-
+	// 将这个设置为true的话我们就可以通过Tick函数不断对周围应用冲击力
 	ForceComp->SetAutoActivate(false);
 
-	ForceComp->Radius = 200.0f;
-	ForceComp->ImpulseStrength = 500.0f;
+	ForceComp->Radius = 200.0f;				// 范围
+	ForceComp->ImpulseStrength = 2000.0f;	// 冲击力大小
 	ForceComp->bImpulseVelChange = true;
 
 	ForceComp->AddCollisionChannelToAffect(ECC_WorldDynamic);

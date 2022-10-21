@@ -10,7 +10,7 @@
 class UStaticMeshComponent;
 
 UCLASS()
-class ACTIONROGUELIKE_API ASItemChes : public AActor, public ISGameplayInterface
+class ACTIONROGUELIKE_API ASItemChes : public AActor, public ISGameplayInterface	// 宝箱类 继承 接口类 ISGameplayInterface（游戏玩法接口），然后在该类中实现接口中的声明函数 Interact（交互）
 {
 	GENERATED_BODY()
 	
@@ -34,9 +34,11 @@ public:
 
 public:
 
-	UPROPERTY(EditAnywhere)
-	float TargetPitch;
+	UPROPERTY(EditAnywhere)		// EditAnywhere 修饰符表示该变量在编辑器中可见。
+	float TargetPitch;			// 声明一个浮点变量，用来处理宝箱打开角度。
 
+	// BlueprintNativeEvent 修饰的接口函数在本机实现，需要添加后缀"_Implementation"，在蓝图中可以选择要不要重写该函数。
+	// 声明Interact（交互）函数的实现。
 	void Interact_Implementation(APawn* InstigatorPawn) override;
 
 };

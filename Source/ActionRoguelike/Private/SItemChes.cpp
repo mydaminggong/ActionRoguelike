@@ -16,7 +16,7 @@ ASItemChes::ASItemChes()
 	LidMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LidMesh"));
 	LidMesh->SetupAttachment(BaseMesh);
 
-	TargetPitch = 110;
+	TargetPitch = 110;	// 初始化宝箱打开角度为110度。
 
 }
 
