@@ -26,7 +26,7 @@ ASExplosiveBarrel::ASExplosiveBarrel()
 	ForceComp->SetAutoActivate(false);
 
 	ForceComp->Radius = 200.0f;				// 范围
-	ForceComp->ImpulseStrength = 2000.0f;	// 冲击力大小
+	ForceComp->ImpulseStrength = 200.0f;	// 冲击力大小
 	ForceComp->bImpulseVelChange = true;
 
 	ForceComp->AddCollisionChannelToAffect(ECC_WorldDynamic);

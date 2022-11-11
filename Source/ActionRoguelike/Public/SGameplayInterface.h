@@ -24,7 +24,7 @@ class ACTIONROGUELIKE_API ISGameplayInterface	// 实际接口名字
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 	// 在这里声明继承该接口，必须实现的函数。
 public:
-	// BlueprintNativeEvent		该修饰符表示函数可以被蓝图覆盖实现，但也有本地实现。
+	// BlueprintNativeEvent		该修饰符表示函数可以被蓝图覆盖实现，但也可以有本地实现。
 	// BlueprintCallable		表示该函数可以被在蓝图中被调用
 	UFUNCTION(BlueprintCallable ,BlueprintNativeEvent)
 	void Interact(APawn* InstigatorPawn);
